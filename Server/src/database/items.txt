@@ -1,0 +1,7 @@
+itemName __ item description __ startBid __ buyItNow __ bidDuration __ ownerName
+computer __ 01101100 01101111 01101100  __ 100.00 __ 1000.00 __ 30 __ saf
+shoes __ the jeffersons, its got an air bubble __ 10.00 __ 50.00 __ 60 __ swagnow
+burger __ borgor with secret borgor sauce __ 2.00 __ 10.00 __ 90 __ josh
+plane-ticket __ destination undisclosed bring a passport __ 75.00 __ 750.00 __ 120 __ test
+bicycle __ i love gears and chains and stuff __ 40.00 __ 300.00 __ 150 __ meher
+microwave __ aluminum foil's worst nightmare __ 37.00 __ 175.00 __ 180 __ halal

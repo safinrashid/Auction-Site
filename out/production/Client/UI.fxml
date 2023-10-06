@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="700.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client">
+   <children>
+      <BorderPane fx:id="historyStack" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="1250.0">
+         <center>
+            <AnchorPane prefHeight="728.0" prefWidth="1051.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="currBid1" layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="333.0" text="all auction history:" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="30.0" />
+                     </font>
+                  </Label>
+                  <Polygon fill="#f2f2f2" layoutX="550.0" layoutY="589.0" points="499.800048828125, -63.60003662109375, -550.0, 111.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Polygon fill="#f2f2f2" layoutX="550.0" layoutY="588.0" points="-550.0, -165.60000610351562, -550.0, 111.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Label fx:id="currBid12" layoutX="13.0" layoutY="54.0" prefHeight="39.0" prefWidth="126.0" text="(new to old)" textAlignment="CENTER" textFill="#5b5b7c">
+                     <font>
+                        <Font name="Roboto Light" size="16.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="343.0" layoutY="26.0" prefHeight="448.0" prefWidth="693.0" style="-fx-background-color: white;">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="765.0" prefWidth="671.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="auctionHistoryLabel" alignment="TOP_CENTER" layoutX="-11.0" layoutY="1.0" prefHeight="718.0" prefWidth="678.0" textAlignment="CENTER" textFill="#0d1b24">
+                                 <font>
+                                    <Font name="Roboto Light" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0D1B24;" BorderPane.alignment="CENTER">
+               <children>
+                  <Polygon fill="#000017" layoutX="266.0" layoutY="435.0" points="-64.39999389648438, -9.600006103515625, -64.39999389648438, 213.0, -266.0, 213.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Button fx:id="exitButton1" cancelButton="true" layoutY="648.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="52.0" prefWidth="201.0" style="-fx-background-color: #000017; -fx-border-color: white; -fx-border-width: 2px 0px 0px 0px; -fx-cursor: HAND;" text="🚪    log out " textFill="#ff8f8f">
+                     <font>
+                        <Font name="Trebuchet MS" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="historycornerUsername" layoutX="7.0" layoutY="4.0" prefHeight="20.0" prefWidth="186.0" text="Welcome, &lt;username&gt;" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutY="32.0" mnemonicParsing="false" onAction="#auctionButtonAction" prefHeight="98.0" prefWidth="201.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px; -fx-cursor: HAND;" text="💸   auctions" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="28.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutY="226.0" mnemonicParsing="false" onAction="#infoButtonAction" prefHeight="98.0" prefWidth="201.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px; -fx-cursor: HAND;" text="🔎     info    " textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="29.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="-4.0" layoutY="129.0" mnemonicParsing="false" onAction="#historyButtonAction" prefHeight="98.0" prefWidth="206.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px;" text="📜    history " textFill="#0d1b24">
+                     <font>
+                        <Font name="Trebuchet MS" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+      <BorderPane fx:id="infoStack" prefHeight="600.0" prefWidth="1250.0">
+         <center>
+            <AnchorPane prefHeight="728.0" prefWidth="1051.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <Polygon fill="#f2f2f2" layoutX="550.0" layoutY="589.0" points="499.800048828125, -63.60003662109375, -550.0, 111.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               <Polygon fill="#f2f2f2" layoutX="550.0" layoutY="588.0" points="-550.0, -165.60000610351562, -550.0, 111.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               <children>
+                  <Label fx:id="currBid11" layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="434.0" text="user information:" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="usernameLabel" layoutX="14.0" layoutY="92.0" prefHeight="55.0" prefWidth="457.0" text="username:" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="guestLabel" layoutX="14.0" layoutY="119.0" prefHeight="55.0" prefWidth="180.0" text="guest: no" textAlignment="CENTER" textFill="#000017be">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="passwordLabel" layoutX="14.0" layoutY="174.0" prefHeight="55.0" prefWidth="457.0" text="password: ●●●●●●●●●" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currBid11121" layoutX="14.0" layoutY="250.0" prefHeight="55.0" prefWidth="457.0" text="my items: " textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="showPasswordButton" layoutX="381.0" layoutY="184.0" mnemonicParsing="false" onAction="#passwordShowAction" prefHeight="33.0" prefWidth="56.0" style="-fx-background-color: transparent; -fx-border-color: #1d2d3c; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: HAND;" text=" 👀 " textFill="#000017">
+                     <font>
+                        <Font name="Trebuchet MS" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="myItems" layoutX="50.0" layoutY="294.0" prefHeight="55.0" prefWidth="980.0" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0D1B24;" BorderPane.alignment="CENTER">
+               <children>
+                  <Polygon fill="#000017" layoutX="266.0" layoutY="435.0" points="-64.39999389648438, -9.600006103515625, -64.39999389648438, 213.0, -266.0, 213.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Button layoutX="-1.0" layoutY="129.0" mnemonicParsing="false" onAction="#historyButtonAction" prefHeight="98.0" prefWidth="202.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px; -fx-cursor: HAND;" text="📜    history " textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="exitButton11" cancelButton="true" layoutY="648.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="52.0" prefWidth="201.0" style="-fx-background-color: #000017; -fx-border-color: white; -fx-border-width: 2px 0px 0px 0px; -fx-cursor: HAND;" text="🚪    log out " textFill="#ff8f8f">
+                     <font>
+                        <Font name="Trebuchet MS" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="infocornerUsername" layoutX="7.0" layoutY="4.0" prefHeight="20.0" prefWidth="186.0" text="Welcome, &lt;username&gt;" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutY="32.0" mnemonicParsing="false" onAction="#auctionButtonAction" prefHeight="98.0" prefWidth="201.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px; -fx-cursor: HAND;" text="💸   auctions" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="28.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutY="227.0" mnemonicParsing="false" onAction="#infoButtonAction" prefHeight="98.0" prefWidth="202.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px;" text="🔎     info    " textFill="#0d1b24">
+                     <font>
+                        <Font name="Trebuchet MS" size="29.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Polygon fill="#000017" points="-64.39999389648438, -9.600006103515625, -64.39999389648438, 213.0, -266.0, 213.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+      <BorderPane fx:id="auctionStack" prefHeight="600.0" prefWidth="1250.0">
+         <center>
+            <AnchorPane prefHeight="728.0" prefWidth="1051.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Rectangle fx:id="itemCurtain" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="338.0" layoutX="14.0" layoutY="78.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1027.0" />
+                  <ComboBox fx:id="itemSelect" editable="true" layoutX="30.0" layoutY="21.0" onAction="#itemSelectedButtonAction" prefHeight="54.0" prefWidth="350.0" promptText="select item" style="-fx-background-color: transparent; -fx-border-color: #000017; -fx-border-radius: 0px; -fx-border-width: 0px 0px 2px 0px;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <TextField fx:id="bidField" alignment="CENTER_RIGHT" layoutX="642.0" layoutY="191.0" prefHeight="52.0" prefWidth="175.0" promptText="0" style="-fx-border-color: #0D1B24; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Roboto Thin" size="24.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="itemName" layoutX="22.0" layoutY="106.0" prefHeight="55.0" prefWidth="479.0" text="item: " textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="itemDescription" layoutX="23.0" layoutY="161.0" prefHeight="34.0" prefWidth="494.0" text="description: " textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="startBid" layoutX="21.0" layoutY="272.0" prefHeight="55.0" prefWidth="363.0" text="starting bid: $" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="timeRemaining" layoutX="672.0" layoutY="97.0" prefHeight="55.0" prefWidth="362.0" text="countdown" textAlignment="CENTER" textFill="#7b0000">
+                     <font>
+                        <Font name="Roboto Light" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="itemOwner" layoutX="23.0" layoutY="195.0" prefHeight="34.0" prefWidth="530.0" text="owner: " textAlignment="CENTER" textFill="#000017" underline="true">
+                     <font>
+                        <Font name="Roboto Light" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currBid" layoutX="21.0" layoutY="317.0" prefHeight="55.0" prefWidth="434.0" text="current bid: $" textAlignment="CENTER" textFill="#006923">
+                     <font>
+                        <Font name="Roboto Light" size="36.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.48" />
+                     </effect>
+                  </Label>
+                  <Button fx:id="placeBidButton" defaultButton="true" layoutX="850.0" layoutY="190.0" mnemonicParsing="false" onAction="#placeBidAction" prefHeight="54.0" prefWidth="151.0" style="-fx-background-color: #1d2d3c; -fx-border-color: #6ce05c; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: HAND;" text="place bid ➜" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="21.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="labelTest112" alignment="CENTER" layoutX="817.0" layoutY="264.0" prefHeight="34.0" prefWidth="31.0" text="or" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buyitnowButton" layoutX="850.0" layoutY="310.0" mnemonicParsing="false" onAction="#buyItNowAction" prefHeight="54.0" prefWidth="151.0" style="-fx-background-color: #1d2d3c; -fx-border-color: #fffb00; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: HAND;" text="buy it now !" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="19.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="currencyLabel1" alignment="CENTER_RIGHT" layoutX="572.0" layoutY="189.0" prefHeight="55.0" prefWidth="62.0" text="\$" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="CENTER_RIGHT" editable="false" layoutX="642.0" layoutY="313.0" prefHeight="52.0" prefWidth="175.0" style="-fx-border-color: #0D1B24; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Roboto Thin" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="614.0" layoutY="95.0" text="⏰  " textFill="#7b0000">
+                     <font>
+                        <Font size="42.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.54" />
+                     </effect>
+                  </Label>
+                  <Label fx:id="buyitnow" alignment="CENTER_RIGHT" layoutX="642.0" layoutY="315.0" prefHeight="47.0" prefWidth="177.0" textAlignment="RIGHT" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="topBidder" layoutX="21.0" layoutY="372.0" prefHeight="34.0" prefWidth="395.0" text="top bidder: " textFill="#000017" underline="true">
+                     <font>
+                        <Font name="Roboto Light" size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="525.0" layoutY="107.0" orientation="VERTICAL" prefHeight="292.0" prefWidth="5.0" />
+                  <Separator layoutX="44.0" layoutY="251.0" prefHeight="5.0" prefWidth="439.0" />
+                  <Polygon fill="#f2f2f2" layoutX="550.0" layoutY="589.0" points="499.800048828125, -63.60003662109375, -550.0, 111.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Polygon fill="#f2f2f2" layoutX="550.0" layoutY="588.0" points="-550.0, -165.60000610351562, -550.0, 111.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Label fx:id="urHighestBidder" alignment="CENTER" layoutX="577.0" layoutY="422.0" prefHeight="55.0" prefWidth="423.0" style="-fx-background-color: white;" textAlignment="CENTER" textFill="#006923">
+                     <font>
+                        <Font name="Roboto Light" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.5" />
+                     </effect>
+                  </Label>
+                  <Label fx:id="auctionError" alignment="CENTER" layoutX="553.0" layoutY="422.0" prefHeight="55.0" prefWidth="450.0" style="-fx-background-color: white;" textAlignment="CENTER" textFill="#7b0000">
+                     <font>
+                        <Font name="Roboto Light" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.5" />
+                     </effect>
+                  </Label>
+                  <Label fx:id="currencyLabel2" alignment="CENTER_RIGHT" layoutX="572.0" layoutY="315.0" prefHeight="55.0" prefWidth="62.0" text="\$" textAlignment="CENTER" textFill="#000017">
+                     <font>
+                        <Font name="Roboto Light" size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="refreshButton" defaultButton="true" layoutX="885.0" layoutY="25.0" mnemonicParsing="false" onAction="#refreshButtonAction" prefHeight="46.0" prefWidth="151.0" style="-fx-background-color: transparent; -fx-border-color: #1d2d3c; -fx-border-radius: 50px; -fx-cursor: HAND;" text="⟳ refresh" textFill="#021022">
+                     <font>
+                        <Font name="Trebuchet MS" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="newItemButton" defaultButton="true" layoutX="398.0" layoutY="22.0" mnemonicParsing="false" onAction="#newItemButtonAction" prefHeight="54.0" prefWidth="132.0" style="-fx-background-color: #1d2d3c; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: HAND;" text="new item" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="21.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ComboBox fx:id="currencySelect" layoutX="959.0" layoutY="659.0" onAction="#currencySelectAction" prefHeight="28.0" prefWidth="82.0" promptText="\$" style="-fx-background-color: transparent; -fx-border-color: #000017; -fx-border-width: 0px 0px 2px 0px;" visibleRowCount="20" />
+               </children></AnchorPane>
+         </center>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0D1B24;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="exitButton" cancelButton="true" layoutY="648.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="52.0" prefWidth="201.0" style="-fx-background-color: #000017; -fx-border-color: white; -fx-border-width: 2px 0px 0px 0px; -fx-cursor: HAND;" text="🚪    log out " textFill="#ff8f8f">
+                     <font>
+                        <Font name="Trebuchet MS" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="auctioncornerUsername" layoutX="7.0" layoutY="4.0" prefHeight="20.0" prefWidth="186.0" text="Welcome, &lt;username&gt;" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="-5.0" layoutY="32.0" mnemonicParsing="false" onAction="#auctionButtonAction" prefHeight="98.0" prefWidth="207.0" style="-fx-background-color: white; -fx-border-color: transparent;" text="💸   auctions" textFill="#0d1b24">
+                     <font>
+                        <Font name="Trebuchet MS" size="28.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutY="226.0" mnemonicParsing="false" onAction="#infoButtonAction" prefHeight="98.0" prefWidth="201.0" style="-fx-background-color: #0D1B24; -fx-border-width: 2px 0px 2px 0px; -fx-border-color: white; CURSO: HAND;" text="🔎     info    " textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="29.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="-1.0" layoutY="129.0" mnemonicParsing="false" onAction="#historyButtonAction" prefHeight="98.0" prefWidth="201.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 2px 0px 2px 0px; -fx-cursor: HAND;" text="📜    history " textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Polygon fill="#000017" layoutX="266.0" layoutY="435.0" points="-64.39999389648438, -9.600006103515625, -64.39999389648438, 213.0, -266.0, 213.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+      <BorderPane fx:id="loginStack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1250.0">
+         <left>
+            <AnchorPane prefHeight="482.0" prefWidth="406.0" style="-fx-background-color: #0D1B24;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="129.0" layoutY="68.0" text="eHills" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Light" size="86.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.75" />
+                     </effect>
+                  </Label>
+                  <Polygon fill="#000017" layoutX="245.0" layoutY="563.0" points="149.0, -162.60000610351562, 150.60000610351562, 136.20001220703125, -214.19993591308594, 136.20001220703125" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Polygon fill="#1d2d3c" layoutX="121.0" layoutY="560.0" points="-120.99998474121094, 140.0, 127.39997863769531, 140.0, -120.99998474121094, -485.20001220703125" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="600.0" prefWidth="412.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="usernameField" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="184.0" prefHeight="52.0" prefWidth="245.0" promptText="required" style="-fx-border-color: #0D1B24; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Roboto Thin" size="18.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="passwordField" alignment="CENTER_RIGHT" layoutX="481.0" layoutY="269.0" prefHeight="52.0" prefWidth="246.0" promptText="optional if guest" style="-fx-border-color: #0D1B24; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent;">
+                     <font>
+                        <Font name="Roboto Thin" size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label layoutX="361.0" layoutY="196.0" prefHeight="23.0" prefWidth="107.0" text="username:">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="360.0" layoutY="283.0" prefHeight="24.0" prefWidth="103.0" text="password:">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="guestButton" layoutX="359.0" layoutY="367.0" mnemonicParsing="false" onAction="#guestButtonAction" prefHeight="54.0" prefWidth="171.0" style="-fx-background-color: transparent; -fx-border-color: #1d2d3c; -fx-border-radius: 10px; -fx-cursor: HAND;" text="continue as guest" textFill="#1d2d3c">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="loginButton" defaultButton="true" layoutX="595.0" layoutY="366.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="56.0" prefWidth="132.0" style="-fx-background-color: #000017; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: HAND;" text="log in ➜" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="loginMessageLabel" layoutX="14.0" layoutY="550.0" prefHeight="42.0" prefWidth="455.0">
+                     <font>
+                        <Font name="Courier New" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelTest" layoutX="93.0" layoutY="267.0" prefHeight="55.0" prefWidth="131.0" text="log in" textAlignment="CENTER">
+                     <font>
+                        <Font name="Roboto Light" size="40.0" />
+                     </font>
+                  </Label>
+                  <Polygon fill="#f2f2f2" layoutX="50.0" layoutY="659.0" points="-50.0, 40.0, 256.79998779296875, 40.0, -49.999977111816406, -260.1999816894531" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Polygon fill="#f2f2f2" layoutX="353.0" layoutY="589.0" points="499.800048828125, -100.19998168945312, -200.5999755859375, 110.0, 499.800048828125, 110.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Separator layoutX="272.0" layoutY="182.0" orientation="VERTICAL" prefHeight="261.0" prefWidth="3.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="557.0" layoutY="671.0" prefHeight="26.0" prefWidth="286.0" text="connected to server on port: 5000" textFill="#000017">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

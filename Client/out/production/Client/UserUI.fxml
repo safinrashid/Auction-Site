@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client">
+   <left>
+      <VBox prefHeight="750.0" prefWidth="215.0" style="-fx-background-color: #0D1B24;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="auctionButton" mnemonicParsing="false" onAction="#auctionButtonAction" prefHeight="116.0" prefWidth="215.0" style="-fx-background-color: #1F2F3B; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="💸   auction" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS" size="31.0" />
+               </font></Button>
+            <Button fx:id="historyButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#historyButtonAction" prefHeight="116.0" prefWidth="215.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="📜    history " textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS" size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="infoButton" layoutX="10.0" layoutY="126.0" mnemonicParsing="false" onAction="#infoButtonAction" prefHeight="116.0" prefWidth="215.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="🔎     info    " textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS" size="31.0" />
+               </font>
+            </Button>
+            <VBox prefHeight="295.0" prefWidth="215.0" />
+            <Label fx:id="UIusername" prefHeight="32.0" prefWidth="183.0" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="70.0" prefWidth="215.0" style="-fx-background-color: #0D1B24; -fx-border-color: white; -fx-border-width: 2px 0px 0px 0px;" text="🚪    log out " textFill="#ff8f8f">
+               <font>
+                  <Font name="Trebuchet MS" size="31.0" />
+               </font>
+            </Button>
+         </children></VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1F2F3B;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

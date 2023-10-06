@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client">
+   <left>
+      <AnchorPane prefHeight="482.0" prefWidth="300.0" style="-fx-background-color: #0D1B24;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="48.0" layoutY="144.0" text="welcome to" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Light" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="180.0" text="eHills" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Light" size="77.0" />
+               </font>
+            </Label>
+            <Polygon fill="#1d2d3c" layoutX="121.0" layoutY="460.0" points="-120.99998474121094, 140.0, 127.39997863769531, 140.0, -120.99998474121094, -280.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Polygon fill="#000d17" layoutX="136.0" layoutY="463.0" points="154.39999389648438, -462.800048828125, 154.39999389648438, -237.60000610351562, 21.399993896484375, -462.800048828125" stroke="TRANSPARENT" strokeType="INSIDE" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="412.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="83.0" layoutY="201.0" prefHeight="23.0" prefWidth="107.0" text="username:">
+               <font>
+                  <Font name="Trebuchet MS" size="18.0" />
+               </font></Label>
+            <Label layoutX="82.0" layoutY="266.0" prefHeight="24.0" prefWidth="103.0" text="password:">
+               <font>
+                  <Font name="Trebuchet MS" size="18.0" />
+               </font></Label>
+            <TextField fx:id="usernameField" layoutX="204.0" layoutY="191.0" prefHeight="44.0" prefWidth="196.0" promptText="username" style="-fx-border-width: 2px 0px 0px 0px;">
+               <font>
+                  <Font name="Roboto Thin" size="12.0" />
+               </font></TextField>
+            <PasswordField fx:id="passwordField" layoutX="204.0" layoutY="256.0" prefHeight="44.0" prefWidth="195.0" promptText="optional if guest">
+               <font>
+                  <Font name="Roboto Thin" size="12.0" />
+               </font></PasswordField>
+            <Button fx:id="guestButton" layoutX="71.0" layoutY="345.0" mnemonicParsing="false" onAction="#guestButtonAction" prefHeight="42.0" prefWidth="141.0" style="-fx-background-color: #40566b;" text="enter as guest" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS" size="16.0" />
+               </font></Button>
+            <Button fx:id="loginButton" layoutX="286.0" layoutY="344.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="44.0" prefWidth="107.0" style="-fx-background-color: #1d2d3c;" text="log in ➜" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS" size="16.0" />
+               </font></Button>
+            <Label fx:id="loginMessageLabel" layoutX="14.0" layoutY="550.0" prefHeight="42.0" prefWidth="455.0">
+               <font>
+                  <Font name="Courier New" size="17.0" />
+               </font></Label>
+            <Label layoutX="181.0" layoutY="114.0" prefHeight="47.0" prefWidth="108.0" text="Log in:" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Light" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
